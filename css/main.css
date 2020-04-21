@@ -1,0 +1,282 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+    font-family: "Digital";
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+  }
+:root {
+    --darkblue: #054A91;
+    --mediumblue: #3E7CB1;
+    --lightblue: #81A4CD;
+    --white: #DBE4EE;
+    --orange: #F17300;
+}
+html {
+    color: white;
+    background-color: #2F4858;
+    font-size: 3em;
+    line-height: 1.4;
+}
+body{
+    background-color: #2F4858;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.parent{
+padding-top: 50px;
+}
+.container{
+    margin: 50px;
+    display: grid;
+    background-color: #172E41;
+    font-family: Share Tech Mono, monospace;
+    margin: auto;
+    width: 416px;
+    padding: 5px 5px 5px 5px;
+    grid-template-columns:  repeat(4,100px);
+    grid-template-rows: 40px 50px repeat(5,100px) ;
+    grid-template-areas:
+    "result result result result"
+    "calculation calculation calculation calculation"
+    "AC AC divide multiply"
+    ". . . subtract"
+    ". . . add"
+    ". . . equal"
+    "zero zero dot equal"
+    ;
+    gap: 2px 2px;
+}
+.result{
+    grid-area: result;
+    background-color: #172E41;
+    font-family: digital;
+    line-height: 50px;
+    font-size: 30px;
+    color: var(--orange);
+    text-align: right;
+}
+div{
+    text-align: center;
+    line-height: 100px;
+    color: white;
+}
+.calculation{
+    grid-area: calculation;
+    font-family: digital;
+    line-height: normal;
+    text-align: right;
+}
+
+.AC{
+    grid-area: AC;
+    background-color: var(--orange);
+}
+.divide{
+    grid-area: divide;
+    background-color: var(--mediumblue);
+}
+.multiply{
+    grid-area: multiply;
+    background-color: var(--mediumblue);
+}
+.digit{
+    background-color:var(--darkblue);
+}
+.subtract{
+    grid-area: subtract;
+    background-color: var(--mediumblue);
+}
+.add{
+    grid-area: add;
+background-color: var(--mediumblue);
+}
+.equal{
+    grid-area: equal;
+    background-color: var(--lightblue);
+    line-height: 200px;
+}
+.zero{
+    grid-area: zero;
+    background-color: var(--darkblue);
+}
+.dot{
+    grid-area: dot;
+    background-color:var(--darkblue);
+}
+
+.clicked{
+    transform: scale(1.1,1.1);
+    box-shadow: 0 0  5px var(--orange) ;
+}
+.digit:hover,
+.operation:hover,
+.AC:hover{
+    box-shadow: 0 0  3px var(--orange) ; 
+}
+
+
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
